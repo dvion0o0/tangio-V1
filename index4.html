@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .vertical-flip {
+  perspective: 1000px;
+}
+
+.vertical-flip .cell {
+  transform-style: preserve-3d;
+  
+  animation: vertical-flip .7s cubic-bezier(.35,.33,0,1.5);
+  animation-delay: calc(.25s + (.05s * var(--cell-index)));
+  
+  transition: transform .7s cubic-bezier(.35,.33,0,1.5);
+  transition-delay: calc(.25s + (.05s * (var(--cell-total) - var(--cell-index))));
+}
+
+.vertical-flip:hover .cell {
+  transform: rotateX(360deg);
+}
+
+/* @keyframes vertical-flip {
+  0% { transform: rotateX(360deg); }
+  100% { transform: rotateX(0deg); }
+} */
+</style>
+
+<body>
+    <div class="vertical-flip" data-splitting="cells" data-columns="10" data-rows="4" data-image="true">
+        <img src="./laptop-with-mockup.png" alt="">
+    </div>
+    <script> Splitting(); </script>
+</body>
+</html>
