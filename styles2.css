@@ -89,13 +89,13 @@ nav {
 .scroll {
   position: absolute;
   left: 45%;
-  bottom: 10%;
+  bottom: 5%;
   /* text-align: center; */
   transform: translateY(-45%, -10%);
   font-size: 52px;
   color: #ffa200;
   transition: all 0.3s linear;
-  animation: scroll 2s linear infinite;
+  animation: scroll 1s linear infinite;
 }
 
 .hero {
@@ -140,7 +140,7 @@ nav {
 }
 
 .nav-link:hover::after {
-  animation: border 1s linear;
+  animation: border 2.1s linear;
   background: #ffffff;
 }
 
