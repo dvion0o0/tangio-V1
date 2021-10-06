@@ -28,6 +28,15 @@
   transform: rotateX(360deg);
 }
 
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
 /* @keyframes vertical-flip {
   0% { transform: rotateX(360deg); }
   100% { transform: rotateX(0deg); }
@@ -38,6 +47,54 @@
     <div class="vertical-flip" data-splitting="cells" data-columns="10" data-rows="4" data-image="true">
         <img src="./laptop-with-mockup.png" alt="">
     </div>
-    <script> Splitting(); </script>
+    <canvas id="hero-lightpass" />
+    <script>
+     Splitting();
+     const html = document.documentElement;
+const canvas = document.getElementById("hero-lightpass");
+const context = canvas.getContext("2d");
+
+const frameCount = 148;
+const currentFrame = index => (
+  
+  `https://jurasic-park.de/design_experiments/frames/ezgif-frame-${index.toString().padStart(3, '0')}_min.jpg`
+)
+
+const preloadImages = () => {
+  for (let i = 1; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
+
+const img = new Image()
+img.src = currentFrame(1);
+canvas.width=1158;
+canvas.height=770;
+img.onload=function(){
+  context.drawImage(img, 0, 0);
+}
+
+const updateImage = index => {
+  img.src = currentFrame(index);
+  context.drawImage(img, 0, 0);
+}
+
+window.addEventListener('scroll', () => {  
+  const scrollTop = html.scrollTop;
+  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / maxScrollTop;
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.ceil(scrollFraction * frameCount)
+  );
+  
+  requestAnimationFrame(() => updateImage(frameIndex + 1))
+});
+
+preloadImages()
+    
+    
+     </script>
 </body>
 </html>

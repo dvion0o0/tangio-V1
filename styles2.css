@@ -65,15 +65,15 @@ nav {
   background-position: 80% 30%; */
   display: grid;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 7rem 0 2rem 0;
   z-index: 999;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .hero-content h1 {
   font-size: 72px;
   font-weight: light;
-  width: 48%;
+  width: 45%;
   margin: 0 auto;
   font-family: "jakarta";
   color: #b3b3b3;
