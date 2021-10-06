@@ -95,7 +95,7 @@ nav {
   font-size: 52px;
   color: #ffa200;
   transition: all 0.3s linear;
-  animation: scroll 1s linear infinite;
+  animation: scroll 1s ease infinite;
 }
 
 .hero {
@@ -140,7 +140,7 @@ nav {
 }
 
 .nav-link:hover::after {
-  animation: border 2.1s linear;
+  animation: border 2.1s ease-in;
   background: #ffffff;
 }
 
