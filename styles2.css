@@ -94,8 +94,18 @@ nav {
   transform: translateY(-45%, -10%);
   font-size: 52px;
   color: #ffa200;
-  transition: all 0.3s linear;
-  animation: scroll 1s ease infinite;
+  /* transition: all 0.3s linear; */
+  animation-name: scroll;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+
+.scroll:hover {
+  animation-name: scroll;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
 }
 
 .hero {
