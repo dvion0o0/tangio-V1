@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Image Testing</h1>
+<div class="services">
+</div>
+
+
+    <script>
+const data = [
+    {
+        name:"Spatial Design",
+        image:["https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80"]
+    },
+    {
+        name:"Projection Mapping",
+        image:["https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80"]
+    },
+    {
+        name:"Virtual Events",
+        image:["https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80"]
+    },
+    {
+        name:"AR/VR",
+        image:["https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80","https://images.unsplash.com/photo-1633538475696-a93e30810e09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80"]
+    },
+]
+
+const services = document.querySelector(".services")
+
+
+window.addEventListener("DOMContentLoaded", function () {
+    const Data = data.map((item,index) => {
+    return `<div>
+  <h4 class="service" onClick="Data()">${item.name}</h4>
+  {item.image.map((item) => {
+      return <img src=${item}/ >
+  })}
+  </div>
+    `
+}).join("");
+
+services.innerHTML = Data;
+})
+
+const Data = () => {
+    console.log("hello")
+}
+
+
+
+
+    </script>
+</body>
+</html>

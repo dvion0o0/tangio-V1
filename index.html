@@ -189,5 +189,25 @@ document.querySelector(".cursor").style.top = e.clientY + 'px'
 <script>
     var scroll = new SmoothScroll('a[href*="#links"]');
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline();
+
+  tl.to("body", {
+    duration: 0.3,
+    ease: "ease.inOut",
+    background: "#573429",
+    scrollTrigger: {
+      target: ".hero",
+      scrub: 3,
+      start: "bottom bottom"
+    }
+  });
+</script>
+
+
 </body>
 </html>
