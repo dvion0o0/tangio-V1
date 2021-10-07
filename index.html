@@ -194,18 +194,25 @@ document.querySelector(".cursor").style.top = e.clientY + 'px'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
 <script>
   gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline();
-
-  tl.to("body", {
-    duration: 0.3,
-    ease: "ease.inOut",
-    background: "#573429",
+  const tl = gsap.timeline({
     scrollTrigger: {
       target: ".hero",
       scrub: 3,
-      start: "bottom bottom"
+      start: "90% bottom"
     }
-  });
+});
+
+  tl.to("body", {
+    duration: 0.3,
+    ease: "power1.inOut",
+    delay:0.1,
+    background: "#2d2d2d",
+  })
+
+
+
+
+
 </script>
 
 
