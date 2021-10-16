@@ -4,13 +4,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <script src="https://kit.fontawesome.com/b7185b8c37.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.0/dist/splitting.css">
-
 <style>
+.glitch-it .char,
+.glitch-it .char:before,
+.glitch-it .char:after {
+  transition: color 0.2s linear;
+  -webkit-animation-duration: 0.6s, 0.4s;
+          animation-duration: 0.6s, 0.4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps(1);
+          animation-timing-function: steps(1);
+  -webkit-animation-delay: calc( -0.1s * var(--char-index) );
+          animation-delay: calc( -0.1s * var(--char-index) );
+}
+.glitch-it .char:before,
+.glitch-it .char:after {
+  visibility: visible;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition-property: opacity;
+  -webkit-animation-name: glitch-anim, glitch-bounce;
+          animation-name: glitch-anim, glitch-bounce;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.glitch-it .char:before {
+  color: #F85959;
+  -webkit-animation-delay: calc( -0.02s * var(--char-index) );
+          animation-delay: calc( -0.02s * var(--char-index) );
+}
+.glitch-it .char:after {
+  color: #B7F5DE;
+  -webkit-animation-delay: calc( -.5s * var(--char-index) );
+          animation-delay: calc( -.5s * var(--char-index) );
+}
+.glitch-it:hover .char {
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-animation-name: glitch-bounce;
+          animation-name: glitch-bounce;
+}
+.glitch-it:hover .char:before, .glitch-it:hover .char:after {
+  opacity: 1;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
 
+@-webkit-keyframes glitch-bounce {
+  20% {
+    transform: translate(-1%, 0%);
+  }
+  40% {
+    transform: translate(14%, -2%);
+  }
+  50% {
+    transform: translate(-5%, 5%);
+  }
+  65% {
+    transform: translate(1%, -2%);
+  }
+  80% {
+    transform: translate(-3%, 2%);
+  }
+}
+
+@keyframes glitch-bounce {
+  20% {
+    transform: translate(-1%, 0%);
+  }
+  40% {
+    transform: translate(14%, -2%);
+  }
+  50% {
+    transform: translate(-5%, 5%);
+  }
+  65% {
+    transform: translate(1%, -2%);
+  }
+  80% {
+    transform: translate(-3%, 2%);
+  }
+}
+@-webkit-keyframes glitch-anim {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+  }
+  20% {
+    -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+            clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+            clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  60% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+            clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+  80% {
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+            clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+@keyframes glitch-anim {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+  }
+  20% {
+    -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+            clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+            clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  60% {
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+            clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+  80% {
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+            clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
 /*  */
 
 .zip-it .char,
@@ -63,8 +193,56 @@
   transition-delay: calc( 1s * var(--char-percent) );
 }
 
+.blur-it .char {
+  color: white;
+  transition: opacity 0.2s linear;
+}
+.blur-it .char:before,
+.blur-it .char:after {
+  visibility: visible;
+  opacity: 0;
+}
+.blur-it:hover .char {
+  color: rgba(255, 255, 255, 0.5);
+}
+.blur-it:hover .char:before,
+.blur-it:hover .char:after {
+  opacity: 0.8;
+  -webkit-animation: blur 0.6s linear infinite alternate;
+  animation: blur 0.6s linear infinite alternate;
+  -webkit-animation-delay: calc(-0.2s * var(--distance-percent));
+  animation-delay: calc(-0.2s * var(--distance-percent));
+}
+.blur-it:hover .char:after {
+  -webkit-animation-delay: calc(0.3s + (-0.2s * var(--distance-percent)));
+  animation-delay: calc(0.3s + (-0.2s * var(--distance-percent)));
+}
 
-/* .slide-vertical .char,
+@-webkit-keyframes blur {
+  0% {
+    transform: translate(-0.1em, 0) scale(0.9) rotate(-2deg);
+  }
+  50% {
+    transform: translate(0, 0) scale(1.1) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.1em, 0) scale(0.9) rotate(2deg);
+  }
+}
+
+@keyframes blur {
+  0% {
+    transform: translate(-0.1em, 0) scale(0.9) rotate(-2deg);
+  }
+  50% {
+    transform: translate(0, 0) scale(1.1) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.1em, 0) scale(0.9) rotate(2deg);
+  }
+}
+
+.slide-vertical .char,
 .slide-horizontal .char {
   overflow: hidden;
   color: transparent;
@@ -81,9 +259,7 @@
 .slide-horizontal .char:before {
   color: #ffa220;
   transition-delay: calc( 0.02s * ( var(--char-index)) );
-} */
-
-/* no change */
+}
 /* .slide-vertical:hover .char:before,
 .slide-horizontal:hover .char:before {
   transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
@@ -95,9 +271,7 @@
   animation: slide2 1s infinite;
 } */
 
-/* no change */
-
-/* .slide-vertical .char:before {
+.slide-vertical .char:before {
   transform: translateY(-100%);
 }
 
@@ -139,8 +313,7 @@ to {
   transform: translateY(120%);
   visibility: visible;
 }
-} */
-/* no change */
+}
 
 /* .slide-vertical:hover .char:before {
   transform: translateY(0%);
@@ -149,9 +322,7 @@ to {
   transform: translateY(100%);
 } */
 
-/* no change */
-
-/* @media screen and (min-width:768px) {
+@media screen and (min-width:768px) {
 .slide-vertical .char{
   color: #ffa220;
 }
@@ -172,7 +343,7 @@ to {
 .slide-horizontal .char:after {
   visibility: hidden;
 }
-} */
+}
 
     </style>
     <title>Tangio 2</title>
@@ -195,9 +366,9 @@ to {
                 </div>
             </nav>
                 <div class="hero-content">
-                    <h1 class="h">We use <span id="com"> Communication Design</span> to help you reach <span class="com1">more people </span>effectively and efficiently.</h1>
-                    <!-- <img src="./laptop-with-mockup.png"  alt="" class="hover-image hover-image-1">
-                    <img src="./Group 31.png"  class="hover-image hover-image-2"  alt=""> -->
+                    <h1 class="h">We use <span id="com" class="slide-vertical slide-vertical1"  data-splitting> Communication Design</span> to <span class="com1 slide-vertical slide-vertical2" data-splitting>help you reach more people </span>effectively and efficiently.</h1>
+                    <img src="./laptop-with-mockup.png"  alt="" class="hover-image hover-image-1">
+                    <img src="./Group 31.png"  class="hover-image hover-image-2"  alt="">
                     <a data-scroll href="#links" class="scroll"><i class="fas fa-chevron-down"></i></a>
                 </div>
 <div class="hero" id="hero">
@@ -214,7 +385,7 @@ to {
 </div>
         </div>
     </header>
-    <!-- <script src="./grained.js"></script>
+    <script src="./grained.js"></script>
     <script>
         var options = {
       "animate": true,
@@ -228,7 +399,7 @@ to {
     }
     
         grained('#header',options)
-    </script> -->
+    </script>
     <script>
         // const scroll = document.querySelector(".scroll");
 // scroll.addEventListener("click", function(e){
@@ -278,7 +449,7 @@ function big(item){
 heroImg.src = linksData[item].img
 }
     </script>
-    <!-- <script>
+    <script>
         const hover = document.querySelector(".hover-image")
         const hover1 = document.querySelector(".hover-image-1")
         const hover2 = document.querySelector(".hover-image-2")
@@ -304,7 +475,7 @@ span2.addEventListener("mouseover", function(){
    hover1.style.display = "none";
    hover2.style.display = "block"
 })
-    </script> -->
+    </script>
     <script src="./cursor.js"></script>
     <script>
         const cursor = curDot(
@@ -321,7 +492,7 @@ span2.addEventListener("mouseover", function(){
 // or, set as you want
 
 cursor.over(".com1", {
-    background: "transparent",
+    background: "#fff",
     scale:4,
     diameter:80,
     // opacity:0.1,
@@ -329,7 +500,7 @@ cursor.over(".com1", {
 });
 
 cursor.over("#com", {
-    background: "transparent",
+    background: "#fff",
     scale:4,
     // opacity:0.4,
     borderColor: "transparent"
@@ -382,10 +553,10 @@ document.querySelector(".cursor").style.top = e.clientY + 'px'
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.ripples-min.js"></script>
-<!-- <script>
+<script>
       $('.header-center').ripples({
     resolution: 400
 });
-</script> -->
+</script>
 </body>
 </html>

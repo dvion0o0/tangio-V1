@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-@font-face {
+/* @font-face {
   font-family: jakarta;
   src: url(./Fonts/PlusJakarta_Sans-2.5/PlusJakarta_Sans-2.5/webfonts/PlusJakartaSans-ExtraLight.woff2);
   font-weight: light;
@@ -16,7 +16,7 @@
   font-family: jakartaBold;
   src: url(./Fonts/PlusJakarta_Sans-2.5/PlusJakarta_Sans-2.5/webfonts/PlusJakartaSans-Bold.woff2);
   font-weight: bold;
-}
+} */
 
 body {
   background: #151313;
@@ -78,17 +78,30 @@ nav {
 
 .hero-content h1 {
   font-size: 72px;
-  font-weight: light;
+  font-weight: 400;
+  line-height: 1;
   width: 50%;
   margin: 0 auto;
-  font-family: "jakarta";
+  font-family: "Montserrat", sans-serif;
   color: #b3b3b3;
   perspective: 1000px;
 }
 
 .hero-content h1 > span {
-  font-weight: bold;
-  font-family: "jakartaBold";
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  transition: color linear;
+  transition-duration: 0.7s;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+
+#com:hover {
+  color: #ffa200;
+}
+
+.com1:hover {
   color: #ffa200;
 }
 
