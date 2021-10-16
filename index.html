@@ -241,8 +241,23 @@
     transform: translate(0.1em, 0) scale(0.9) rotate(2deg);
   }
 }
+
+
+.color-cycle:hover .char {
+  animation: color-cycle 1s cubic-bezier(.5,0,.5,1) infinite alternate;
+  animation-delay: calc( 0.03s * var(--char-index) );
+  animation-duration: calc( 0.04s * calc( var(--char-total) ) );
+}
+
+@keyframes color-cycle {
+  25% { color: #FEFF89 }
+  50% { color: #FF9F68 }
+  75% { color: #F85959 }
+  100% { color: #AC005D }
+}
+
+
     </style>
-</style>
     <title>Tangio 2</title>
 </head>
 <body>
@@ -263,7 +278,7 @@
                 </div>
             </nav>
                 <div class="hero-content">
-                    <h1 class="h">We use <span id="com"> Communication Design</span> to <span class="com1">help you reach more people </span>effectively and efficiently.</h1>
+                    <h1 class="h">We use <span id="com" class="color-cycle" data-splitting> Communication Design</span> to <span class="com1 color-cycle" data-splitting>help you reach more people </span>effectively and efficiently.</h1>
                     <img src="./laptop-with-mockup.png"  alt="" class="hover-image hover-image-1">
                     <img src="./Group 31.png"  class="hover-image hover-image-2"  alt="">
                     <a data-scroll href="#links" class="scroll"><i class="fas fa-chevron-down"></i></a>

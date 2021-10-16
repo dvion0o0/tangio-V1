@@ -409,6 +409,27 @@ nav {
   .hero-img {
     display: none;
   }
+
+  .color-cycle .char {
+    animation: color-cycle 1s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+    animation-delay: calc(0.05s * var(--char-index));
+    animation-duration: calc(0.1s * calc(var(--char-total)));
+  }
+
+  @keyframes color-cycle {
+    25% {
+      color: #feff89;
+    }
+    50% {
+      color: #ff9f68;
+    }
+    75% {
+      color: #f85959;
+    }
+    100% {
+      color: #ac005d;
+    }
+  }
 }
 
 @media screen and (min-width: 335px) and (max-width: 434px) {
@@ -440,5 +461,26 @@ nav {
 
   .hero-img {
     display: none;
+  }
+
+  .color-cycle .char {
+    animation: color-cycle 1s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+    animation-delay: calc(0.05s * var(--char-index));
+    animation-duration: calc(0.1s * calc(var(--char-total)));
+  }
+
+  @keyframes color-cycle {
+    25% {
+      color: #feff89;
+    }
+    50% {
+      color: #ff9f68;
+    }
+    75% {
+      color: #f85959;
+    }
+    100% {
+      color: #ac005d;
+    }
   }
 }
