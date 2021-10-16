@@ -242,20 +242,95 @@
   }
 }
 
+.slide-vertical .char,
+.slide-horizontal .char {
+  overflow: hidden;
+  color: transparent;
+}
+.slide-vertical .char:before, .slide-vertical .char:after,
+.slide-horizontal .char:before,
+.slide-horizontal .char:after {
+  visibility: visible;
+  color: #FFF;
+  transition: transform 2s cubic-bezier(0.9, 0, 0.2, 1);
+  transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+}
+.slide-vertical .char:before,
+.slide-horizontal .char:before {
+  color: #ffa220;
+  transition-delay: calc( 0.02s * ( var(--char-index)) );
+}
+/* .slide-vertical:hover .char:before,
+.slide-horizontal:hover .char:before {
+  transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+  animation: slide1 1s infinite; 
+}
+.slide-vertical:hover .char:after,
+.slide-horizontal:hover .char:after {
+  transition-delay: calc( 0.02s * ( var(--char-index)) );
+  animation: slide2 1s infinite;
+} */
 
-.color-cycle:hover .char {
-  animation: color-cycle 1s cubic-bezier(.5,0,.5,1) infinite alternate;
-  animation-delay: calc( 0.03s * var(--char-index) );
-  animation-duration: calc( 0.04s * calc( var(--char-total) ) );
+.slide-vertical .char:before {
+  transform: translateY(-100%);
 }
 
-@keyframes color-cycle {
-  25% { color: #FEFF89 }
-  50% { color: #FF9F68 }
-  75% { color: #F85959 }
-  100% { color: #AC005D }
+.slide-vertical .char::before
+{
+  transition-delay: calc( 0.01s + ( 0.02s * ( var(--char-index)) ) );
+  animation: slide1 2s infinite; 
 }
 
+.slide-vertical .char::after
+{
+  transition-delay: calc( 0.01s * ( var(--char-index)) );
+  animation: slide2 2s infinite;
+}
+
+
+@keyframes slide1 {
+  to {
+    transform: translateY(0%);
+    visibility: hidden;
+  }
+}
+
+@keyframes slide2 {
+to {
+  transform: translateY(120%);
+  visibility: visible;
+}
+}
+
+/* .slide-vertical:hover .char:before {
+  transform: translateY(0%);
+}
+.slide-vertical:hover .char:after {
+  transform: translateY(100%);
+} */
+
+@media screen and (min-width:768px) {
+.slide-vertical .char{
+  color: #ffa220;
+}
+
+  .slide-vertical .char::before
+{
+  transition-delay: calc( 0.01s + ( 0.02s * ( var(--char-index)) ) );
+  animation: none;
+}
+
+.slide-vertical .char::after
+{
+  transition-delay: calc( 0.01s * ( var(--char-index)) );
+  animation: none;
+}
+.slide-vertical .char:before, .slide-vertical .char:after,
+.slide-horizontal .char:before,
+.slide-horizontal .char:after {
+  visibility: hidden;
+}
+}
 
     </style>
     <title>Tangio 2</title>
@@ -278,7 +353,7 @@
                 </div>
             </nav>
                 <div class="hero-content">
-                    <h1 class="h">We use <span id="com" class="color-cycle" data-splitting> Communication Design</span> to <span class="com1 color-cycle" data-splitting>help you reach more people </span>effectively and efficiently.</h1>
+                    <h1 class="h">We use <span id="com" class="slide-vertical"  data-splitting> Communication Design</span> to <span class="com1 slide-vertical" data-splitting>help you reach more people </span>effectively and efficiently.</h1>
                     <img src="./laptop-with-mockup.png"  alt="" class="hover-image hover-image-1">
                     <img src="./Group 31.png"  class="hover-image hover-image-2"  alt="">
                     <a data-scroll href="#links" class="scroll"><i class="fas fa-chevron-down"></i></a>

@@ -69,7 +69,7 @@ nav {
   background-position: 80% 30%; */
   display: grid;
   justify-content: center;
-  padding: 7rem 0 2rem 0;
+  padding: 4rem 0 2rem 0;
   z-index: 999;
   /* overflow: scroll; */
 }
@@ -409,32 +409,11 @@ nav {
   .hero-img {
     display: none;
   }
-
-  .color-cycle .char {
-    animation: color-cycle 1s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
-    animation-delay: calc(0.05s * var(--char-index));
-    animation-duration: calc(0.1s * calc(var(--char-total)));
-  }
-
-  @keyframes color-cycle {
-    25% {
-      color: #feff89;
-    }
-    50% {
-      color: #ff9f68;
-    }
-    75% {
-      color: #f85959;
-    }
-    100% {
-      color: #ac005d;
-    }
-  }
 }
 
 @media screen and (min-width: 335px) and (max-width: 434px) {
   .hero-content h1 {
-    font-size: 45px;
+    font-size: 42px;
     width: 100%;
   }
 
@@ -462,25 +441,10 @@ nav {
   .hero-img {
     display: none;
   }
+}
 
-  .color-cycle .char {
-    animation: color-cycle 1s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
-    animation-delay: calc(0.05s * var(--char-index));
-    animation-duration: calc(0.1s * calc(var(--char-total)));
-  }
-
-  @keyframes color-cycle {
-    25% {
-      color: #feff89;
-    }
-    50% {
-      color: #ff9f68;
-    }
-    75% {
-      color: #f85959;
-    }
-    100% {
-      color: #ac005d;
-    }
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .hero-content h1 {
+    width: 70%;
   }
 }
