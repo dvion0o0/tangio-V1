@@ -368,3 +368,20 @@ nav {
   position: fixed;
   /* transform: translate(-50%, -50%); */
 }
+
+@media screen and (max-width: 334px) {
+  .hero-content h1 {
+    font-size: 35px;
+    width: 100%;
+  }
+  .logo {
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 335px) and (max-width: 434px) {
+  .hero-content h1 {
+    font-size: 45px;
+    width: 100%;
+  }
+}
