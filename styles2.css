@@ -397,6 +397,18 @@ nav {
   .scroll {
     bottom: 15%;
   }
+
+  .cursor {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .hero-img {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 335px) and (max-width: 434px) {
@@ -416,5 +428,17 @@ nav {
 
   .scroll {
     bottom: 20%;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .hero-img {
+    display: none;
   }
 }
