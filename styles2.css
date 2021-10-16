@@ -51,6 +51,10 @@ nav {
   align-items: center;
 }
 
+.logo {
+  width: 107px;
+}
+
 .social-links > img {
   width: 50px;
   cursor: pointer;
@@ -122,6 +126,10 @@ nav {
   height: calc(100vh - 60px);
   padding: 4rem 0 4rem 0;
   gap: 4rem;
+}
+
+.hover-image {
+  width: 300px;
 }
 
 .nav-links {
@@ -375,7 +383,11 @@ nav {
     width: 100%;
   }
   .logo {
-    width: 40px;
+    width: 80px;
+  }
+  .hover-image {
+    width: 150px;
+    display: none;
   }
 }
 
@@ -383,5 +395,10 @@ nav {
   .hero-content h1 {
     font-size: 45px;
     width: 100%;
+  }
+
+  .hover-image {
+    width: 200px;
+    display: none;
   }
 }
