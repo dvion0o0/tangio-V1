@@ -46,6 +46,12 @@ header {
   background-position: center;
 }
 
+@media screen and (max-width: 434px) {
+  .wrapper {
+    background-size: cover;
+  }
+}
+
 .header-center {
   width: 90vw;
   margin: 0 auto;
@@ -468,4 +474,12 @@ nav {
   .hero-content h1 {
     width: 70%;
   }
+}
+
+/* .hero-img */
+
+.hero-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

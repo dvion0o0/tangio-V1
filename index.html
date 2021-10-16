@@ -264,7 +264,7 @@ const linksData = [
 
 const links = document.querySelector(".nav-links");
 const heroImg = document.querySelector(".heroImg")
-
+const heroImage = document.querySelector(".hero-img")
 window.addEventListener("DOMContentLoaded", function () {
 //     const link = linksData.map((item,index) => {
 //     return `
@@ -278,6 +278,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function big(item){
   console.log(item)
+  const URL = linksData[item].img
 heroImg.src = linksData[item].img
 }
     </script>
@@ -383,11 +384,11 @@ document.querySelector(".cursor").style.top = e.clientY + 'px'
     var s = Splitting()
 
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.ripples-min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.ripples-min.js"></script> -->
 <!-- <script>
-      $('.header-center').ripples({
-    resolution: 400
+      $('.hero-img').ripples({
+    resolution: 400,
 });
 </script> -->
 <!-- background move -->
@@ -398,7 +399,13 @@ wrapper.addEventListener("mousemove", (e) => {
   wrapper.style.backgroundPositionX = -e.clientX * 0.09 +  "px"
   wrapper.style.backgroundPositionY = -e.pageY * 0.09 + "px";
 });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.0.3/pixi.min.js"></script>
+<script>
 
 </script>
+
+
+
 </body>
 </html>
