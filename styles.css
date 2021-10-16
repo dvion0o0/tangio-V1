@@ -40,6 +40,12 @@ header {
   min-height: 100vh;
 }
 
+.wrapper {
+  background: url(./balance_02.jpg) no-repeat;
+  background-size: 120vw;
+  background-position: center;
+}
+
 .header-center {
   width: 90vw;
   margin: 0 auto;

@@ -181,11 +181,11 @@ to {
     <div class="lds-facebook"><div></div><div></div><div></div></div>
     <div class="cursor"></div>
     <header id="header">
+      <div class="wrapper">
         <div class="header-center">
             <div class="grained"></div>
             <nav>
-               <img class="logo" src="./tangio.png" alt="">
-                  
+               <img class="logo" src="./tangio.png" alt="">                
                 <div class="social-links">
                     <img src="./Group 25.png" alt="">
                     <img src="./Group 26.png" alt="">
@@ -200,6 +200,9 @@ to {
                     <img src="./Group 31.png"  class="hover-image hover-image-2"  alt=""> -->
                     <a data-scroll href="#links" class="scroll"><i class="fas fa-chevron-down"></i></a>
                 </div>
+                </div>
+                </div>
+                <div class="header-center">        
 <div class="hero" id="hero">
     <ul class="nav-links" id="links">
         <li  class="nav-link zip-it" data-splitting data-index="0" onmouseover="big(this.dataset.index)">Home <span class="o"><img src="./forward icon.png" alt="" ></span></li>
@@ -387,5 +390,15 @@ document.querySelector(".cursor").style.top = e.clientY + 'px'
     resolution: 400
 });
 </script> -->
+<!-- background move -->
+<script>
+const wrapper = document.querySelector(".wrapper")
+wrapper.addEventListener("mousemove", (e) => {
+  console.log(e, "hello")
+  wrapper.style.backgroundPositionX = -e.clientX * 0.09 +  "px"
+  wrapper.style.backgroundPositionY = -e.pageY * 0.09 + "px";
+});
+
+</script>
 </body>
 </html>
