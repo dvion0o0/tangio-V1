@@ -180,7 +180,7 @@ to {
 <body>
     <div class="lds-facebook"><div></div><div></div><div></div></div>
     <div class="cursor"></div>
-    <header id="header">
+    <header id="header ">
       <div class="wrapper">
         <div class="header-center">
             <div class="grained"></div>
@@ -212,7 +212,7 @@ to {
         <li class="nav-link zip-it" data-splitting data-index="4" onmouseover="big(this.dataset.index)">Contact <span class="o"><img src="./forward icon.png" alt="" ></span></li>
     </ul>
     <div class="hero-img">
-        <img src="./laptop-with-mockup.png" class="heroImg" width="90%" height="400px" alt="">
+        <img src="./laptop-with-mockup.png" class="heroImg" width="90%" height="400px" style="border-radius: 5px;" alt="">
     </div>
 </div>
         </div>
@@ -400,12 +400,17 @@ wrapper.addEventListener("mousemove", (e) => {
   wrapper.style.backgroundPositionY = -e.pageY * 0.09 + "px";
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.0.3/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 <script>
-
+  // Also can pass in optional settings block
+  var rellax = new Rellax('.rellax', {
+    speed: -2,
+    center: false,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+  });
 </script>
-
-
-
 </body>
 </html>

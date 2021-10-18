@@ -41,7 +41,8 @@ header {
 }
 
 .wrapper {
-  background: url(./balance_02.jpg) no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./balance_02.jpg) no-repeat;
   background-size: 120vw;
   background-position: center;
 }
@@ -476,10 +477,13 @@ nav {
   }
 }
 
-/* .hero-img */
-
 .hero-img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  filter: grayscale(1) blur(0.1px);
+  transition: all 0.5s linear;
+  transform: scale(0.9);
+}
+
+.hero-img:hover {
+  filter: grayscale(0) blur(0);
+  transform: scale(1);
 }
