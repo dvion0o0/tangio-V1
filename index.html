@@ -397,20 +397,8 @@ const wrapper = document.querySelector(".wrapper")
 wrapper.addEventListener("mousemove", (e) => {
   console.log(e, "hello")
   wrapper.style.backgroundPositionX = -e.clientX * 0.09 +  "px"
-  wrapper.style.backgroundPositionY = -e.pageY * 0.09 + "px";
+  // wrapper.style.backgroundPositionY = -e.pageY * 0.09 + "px";
 });
-</script>
-<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-<script>
-  // Also can pass in optional settings block
-  var rellax = new Rellax('.rellax', {
-    speed: -2,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-  });
 </script>
 </body>
 </html>
